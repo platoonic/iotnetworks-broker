@@ -32,7 +32,12 @@ aedes.on("connectionError", function (client, err) {
 
 aedes.on("publish", function (packet, client) {
   if (client) {
-    console.log("message arrived: " + packet);
+    console.log(
+      "message arrived: topic: " +
+        packet.topic +
+        " / payload: " +
+        packet.payload
+    );
   }
 });
 
